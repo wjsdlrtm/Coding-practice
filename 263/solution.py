@@ -4,25 +4,18 @@ class Solution(object):
         :type num: int
         :rtype: bool
         """
+        def multiple_check(divider, target):
+            while(target % divider ==0):
+                target = target/divider
+            return target
         if (num==0):
             return False
-        while(num % 30 == 0):
-            num = num/30
-        while(num % 15 == 0):
-            num = num/15
-        while(num % 10 == 0):
-            num = num/10
-        while(num % 6 == 0):
-            num = num/6
-
-        while(num % 5 == 0):
-            num = num/5
-
-        while(num % 3 ==0):
-            num = num/3
-
-        while(num % 2 ==0):
-            num = num/2
+        num = multiple_check(30, num)
+        num = multiple_check(15, num)
+        num = multiple_check(10, num)
+        num = multiple_check(5, num)
+        num = multiple_check(3, num)
+        num = multiple_check(2, num)
 
         if(num==1):
             return True
