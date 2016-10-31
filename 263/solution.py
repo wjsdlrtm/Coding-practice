@@ -1,4 +1,6 @@
 class Solution(object):
+
+
     def isUgly(self, num):
         """
         :type num: int
@@ -10,16 +12,15 @@ class Solution(object):
             return target
         if (num==0):
             return False
-        num = multiple_check(30, num)
-        num = multiple_check(15, num)
-        num = multiple_check(10, num)
-        num = multiple_check(5, num)
-        num = multiple_check(3, num)
-        num = multiple_check(2, num)
+        dividers = [30, 15, 10, 5, 3, 2]
+        for divider in dividers:
+            num = multiple_check(divider, num)
 
         if(num==1):
             return True
 
         else:
             return False
+
+
 
