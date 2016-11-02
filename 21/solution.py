@@ -11,6 +11,13 @@ class Solution(object):
         :type l2: ListNode
         :rtype: ListNode
         """
-        l3 = []
-        l3 = set(l1 + l2)
-        return list(l3)
+        if not l1:
+            l1 = []
+        else:
+            l1 = l1.val
+        if not l2:
+            l2 = []
+        else:
+            l2 = l2.val
+        l3 = ListNode(l1 + l2)
+        return l3
